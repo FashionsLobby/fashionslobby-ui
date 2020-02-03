@@ -1,0 +1,46 @@
+<mat-toolbar class="mat-background-accent">
+
+  <div class="col-lg-4 col-12">
+    <span>Fashions Lobby</span>
+  </div>
+
+  <div class="col-lg-4 col-12">
+
+    <button mat-menu-item [matMenuTriggerFor]="collections">
+      <mat-icon class="icon-display">collections</mat-icon>
+      <span>Collections</span>
+    </button>
+
+    <mat-menu #collections="matMenu" >
+      <button  mat-menu-item *ngFor="let item of collectionMenu" >{{item.menuitem}}</button>
+    </mat-menu>
+
+
+
+  </div>
+
+  <div class="col-lg-4 col-12 ">
+<ul>
+  <li class="d-inline-block float-lg-right mr-4 pt-2">
+
+    <mat-icon class="icon-display">add_shopping_cart</mat-icon>
+
+</li>
+  <li class="d-inline-block float-lg-right mr-3 ml-4">
+  <button mat-menu-item [matMenuTriggerFor]="account">
+    <mat-icon class="icon-display">account_circle</mat-icon>
+  </button>
+
+  <mat-menu #account="matMenu" >
+    <button  mat-menu-item *ngFor="let item of accountsMenu" >{{item.menuitem}}</button>
+  </mat-menu>
+</li>
+
+</ul>
+
+
+
+    <!-- <mat-icon class="float-lg-right ml-3 mr-4" >account_circle</mat-icon> -->
+    <!-- <mat-icon class="float-lg-right mr-4" >add_shopping_cart</mat-icon> -->
+  </div>
+</mat-toolbar>
